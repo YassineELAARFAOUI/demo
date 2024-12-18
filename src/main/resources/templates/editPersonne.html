@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier une Personne</title>
+</head>
+<body>
+    <h1>Modifier une personne</h1>
+    <form action="/editPersonne" method="post">
+        <!-- Champ caché pour inclure l'ID -->
+        <input type="hidden" name="id" th:value="${personne.num}" />
+        
+        <!-- Champ pour le nom -->
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" th:value="${personne.nom}" required />
+        <br/>
+
+        <!-- Champ pour le prénom -->
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" th:value="${personne.prenom}" required />
+        <br/>
+
+        <!-- Bouton pour enregistrer les modifications -->
+        <button type="submit">Enregistrer</button>
+    </form>
+</body>
+</html>

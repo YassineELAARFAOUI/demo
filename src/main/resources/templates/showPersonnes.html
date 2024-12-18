@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste de personnes</title>
+</head>
+<body>
+    <h1>Liste de personnes</h1>
+    <!-- Parcourir la liste de personnes -->
+    <div th:each="personne : ${personnes}">
+        <p th:text="${personne.prenom} + ' ' + ${personne.nom}"></p>
+        <a th:href="@{/editPersonne/{id}(id=${personne.num})}">Modifier</a>
+        <a th:href="@{/deletePersonne/{id}(id=${personne.num})}">Delete</a>
+    </div>
+</body>
+</html>
